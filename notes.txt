@@ -491,6 +491,21 @@ object.errors.each { |attr, msg| ... }
 object.errors.full_messages.each { |msg| ... }
 
 
+######################################
+
+Escaping output
+demo/escape_output
+
+#####################################
+
+strip_links(html) #remove toute les links dans une string
+
+strip_tags(html) #remove toute les tag html
+
+sanitize(html, options) #remove html JS default rem only <script> options :tags :attributes pour whitelister des chose
+
+sanitize(@subject.content, :tags => ['p', 'br', 'strong', 'em], :attributes => ['id', 'class', 'style'])
+
 
 
 

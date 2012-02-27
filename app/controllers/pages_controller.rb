@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 	def new
 		@page = Page.new
 		@page_count = Page.count + 1
-		#@subjects = Subject.order('position ASC')
+		@subjects = Subject.order('position ASC')
 	end
 	
 	
@@ -44,6 +44,7 @@ class PagesController < ApplicationController
 	end
 	
 	def update
+		@subjects = Subject.order('position ASC')
 		@page = Page.find(params[:id])
 		if @page.update_attributes(params[:page])
 		flash[:notice] = "Page updated successfully"
