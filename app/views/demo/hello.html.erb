@@ -1,0 +1,47 @@
+<h1>Demo#hello</h1>
+<p>Hello world!</p>
+
+<%= 1 + 1 %>
+
+<% target = "world" %>
+
+<%= "Hello #{target}" %>  <br>
+Id: <%= @id %><br>
+Next page: <%= @page + 1%><br>
+
+<%
+=begin
+
+#standar ruby qui marche pas dans une .erb vu que c'est embeded
+<%
+  3.times do
+  puts "xxx"
+  end
+%>
+
+
+#manière correct de le faire
+
+<% 3.times do %>
+	aaa: <%= "xxx" %>
+<% end %>
+
+
+
+=end
+%>
+
+<% #prend la variable @array dans notre controler et pour chaque |n| ( nombre )%>
+<% @array.each  do |n| %> 
+	 <%= n %>
+<% end %>
+<% # pas oubliger de spécifier /demo/index le demo car on est encore dans le même controler --> %>
+<%= link_to("retour home",'index')%> <br>
+
+<% #utilise la route file pour deviner ou est le index parceque on est dans le même controler va shorter le link a localhost:3000 %>
+<%= link_to("back home", {:action => 'index'}) %>
+
+<hr />
+<% #output le params qui et le post ou get %>
+<%= params.inspect %>
+

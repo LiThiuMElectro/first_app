@@ -1,0 +1,533 @@
+####################################################
+
+creating records in rails console to the database
+
+####################################################
+rails console ouvre la console de rails
+
+après on créer une instance dun model 
+
+subject = Subject.new
+
+on peu accumuler du data dedans avant de saver genre
+
+subject.name = "Nouveau sujet"
+
+après on save 
+
+subject.save
+
+
+mais pas très pratique de faire sa un après l'autre alors c'est mieux de faire
+
+subject = Subject.new(:name => "First suject", :position => 1, :visible => true)
+
+save toute automatiquement
+
+###################################################
+
+updating records in rails console to the database
+
+###################################################
+
+subject = Subject.find(1)  #on chercher le premier sujet par Id
+
+subject.name #sa outputer la value name
+
+subject.name = "Initiale suject" #va updater notre subject mais pas la DB t'en que s'est pas saver
+
+subject.save # save toute dans la db et update le updated_at
+
+
+
+##########
+autre methode
+##########
+
+subject = Subject.find(2) #cherche #2
+
+subject.update_attributes(:name => "Revised Subject", :visible => true) #update toute one shot sans saver
+
+
+###################################################
+
+deleting record records in rails console to the database
+
+###################################################
+
+créer une nouveau sujet pour l'exemple
+
+Subject.create(:name => "bad subject")
+
+trouver notre bad subject
+
+subject = Subject.find(3)
+
+Detruire le sujet
+
+subject.destroy 
+
+subject.name va output encore "Bad subject" parceque y reste dans le system mais pas dans la DB sa noius permet de p-e outputter "jai deleter "Bad subject" au user
+
+subject devient frozen et on peu pas affecter avec .name par exemple
+
+###################################################
+
+finding records in rails console to the database
+
+###################################################
+
+Classname.find(Id) #exemple Subject.find(2), a utiliser quand on est sur que la chose est la
+
+return Object or error
+
+######
+Dynamic finders
+######
+Classname.find_by_id(2), Subject.find_by_name("First subject") # find_by_nom_de_la_column
+
+######
+find all method
+######
+
+Subject.all #return un array
+
+######
+first/last method
+#####
+Subject.first, Subject.last #returns an object or nil
+
+
+
+##########################################################
+
+New active relation active method
+
+##########################################################
+
+
+subjects = Subject.where(:visible => true) standar hash sécuritaire
+
+subjects = Subject.where("visible = true") #sql pas escaper sa c'est passer comme une string alors toute passe dedans rien n'est filterer
+
+subjects = Subject.where(["visible = ?", true]) #sql escaper parceque true est dekoi qu'on penser quiet sensitive passer comme un array c'est plus sécuritaire, le problème cest que sa support just des query simple
+
+subjects.to_sql return la command SQL qui sa exécuter alors aider pour débugger
+
+######
+chainer les command
+######
+
+subjects = Subject.where(:visible => true).where(:position => 1) 
+ou
+subjects = Subject.where(:visible => true, :position =>1 )
+
+va returner un array aulieux d'un object si rien return sa return un empty array
+
+subjects = Subject.where(:visible => true, :position =>1 ).first #return le first
+
+ subjects = Subject.scoped.where(:position => 1) # trouver toutes les chose dans Subject comme .all mais peut être chainer avec d'autre method après comme ici .where(:position => 1)
+
+
+
+############################################################
+
+Query Methods : Order, Limit, Offset
+
+############################################################
+
+Order; alphabet alenver etc...
+
+Limit reduit la limit des du return
+
+Offset te fait skipper over des records
+
+sa c'est les nouvelle méthode utiliser dans Rails 3.2
+
+
+order(sql_fragment)
+
+limit(integer)
+
+offset(integer)
+
+peuvent être chainer
+
+Subject.order("subjects.position ASC").limit(20).offset(10) Subject sorter les position en ASC sur une limite de 20 avec un offset skip de 10
+
+pour order sa va toujours être "table_name.column_name ASC/DESC"  si on work juste avec une table on peu juste ne pas mettre le nom de la table
+
+Table disambiguation:
+
+Une table = pas oubliger de la nommer
+Si on work au traber de plusierus tables c'est le temps de nommer nos request table_name.column_name
+
+
+"subjects.positions ASC"
+"subjects.name DESC"
+"subjects.visible DESC, subjects.name ASC"
+
+
+################################################################
+
+Name Scopes
+
+###############################################################
+
+Sa sert à nommer des querys qu'on as déjà utiliser pis les mettre dans un model pis les caller depuis le model
+
+le nom de la command ===> scope
+
+alors on scope dans un fichier une command exemple
+
+dans subject.rb
+
+scope :visible, where(:visible => true) on scope la command where(:visible => true) dans le nom visible alors dans la console ou peu caller subjects = Subject.visible pis sa return comme si on avais caller subjects = Subject.where(:visible => true)
+scope :invisible, where(:visible => false)
+
+on peu chainer nos request
+
+subjects = Subject.visible.limit(1)
+
+subjects = Subject.limit(1).visible
+
+
+
+
+######################################
+
+Associations
+
+#####################################
+
+
+
+########### 
+belongs_to = foreign_key  genre les photos belongs_to user alors on my user_id dans la table des photos
+###########
+
+HAS_MANY
+
+subject.pages
+
+subject.pages << page
+
+subject.pages = [page, page ,page]
+
+subject.pages.delete(page)
+
+subject.pages.clear
+
+subject.pages.empty?
+
+subject.pages.size
+
+##########################################
+
+Many to Many assosications
+
+##########################################
+
+Project had_and_belong_to_many :collaborators
+
+BlogPost has_ans_belongs_to_many :categories  # un post de blog peu être à la fois dans la catégories Technologie ou Coding par exemple alors cest comme un one to many mais des deux coté
+
+à place de mettre une foreign key dans une des column comme dans one to many on créer un column qui va linker les deux affaire et la column ne dois pas avoir de primary key qui incrémente automatiquement.
+
+
+
+
+############################################
+
+CRUD
+
+###########################################
+
+#####
+Create
+#####
+
+Deux functions
+
+New; Display a web form empty really to fill out
+
+Create; Process form les errors ou process le stuck
+
+#####
+Read
+#####
+
+Deux functions
+
+list; sa list toute les records
+
+show; sa output 1 record qui est dans la db
+
+
+#####
+Update 
+#####
+
+Deux functions
+
+Edit; sa display un form quia déjà du data qui est dans la db
+
+Update; update la db avec les infos qui sont changé
+
+#####
+Delete
+#####
+
+Deux functions
+
+Delete; sa display l'information qu'on est sur le bord de delete
+
+Destroy; sa destroy linformation
+
+
+
+addition: rénovations majeurs
+autre dépense : entretien régulier plombier remplacer des choses simple.
+déterminer le % utiliser pas le locataire en dimention en pied carré.
+avis de reconduction de baille
+assurance que je paie pour le block; pret habitation
+intéret de frais hypotèquaire au 31 decembre 2011
+
+
+###########################################################
+
+loader du CSS javascript escaping Javascript
+
+###########################################################
+
+
+dans un layout
+
+<%= stylesheet_link_tag('public','admin', :media => 'all') %>
+<%= javascript_include_tag('application')%>
+
+Escaper
+
+<% text = "'); alert('Gotcha!" %>
+
+<%= javascript_tag("alert('#{escape_javascript(text)}');") %>
+
+
+##########################################
+
+Number helpers
+
+
+##########################################
+number_to_currency  Option: delimiter, separator, precision, unit, format
+
+number_to_percentage Option: delimiter, separator, precision
+
+number_with_precision Option: delimiter, separator, precision
+
+number_with_delimiter Option: delimiter, separator
+
+number_to_human_size (1024 bytes returns 1kb) Option: delimiter, separator, precision  Number of bytes
+
+number_to_phone Options delimiter, country_code, area_code, extension
+
+######
+
+exemple
+
+######
+
+number_to_currency(34.5)
+$34.50
+
+Number_to_currency(34.5, :precision =>, :unti => "£", :format => "%n %u") returns 35£
+
+###########################################
+
+Date times helpers
+
+##########################################
+
+beginning_of_day	end_of_day
+beginning_of_week	end_of_week
+beginning_of_month	end_of_month
+beginning_of_year	end_of_year
+yesterday		tomorrow
+prev_month		next_month
+prev_year		next_year
+
+Time.now + 30.days - 23.minutes
+
+30.days.from_now - 23minutes
+
+Time.now.prev_year.end_of_month.beginning_of_day
+
+datetime.strftime( format_string )
+
+datetime.to_s ( :option )
+options; :db=>"%Y-%m-%d %H:%M:%S", :number=>"%Y%m%d%H%M%S", :time=>"%H:%M", :short=>"%d %b %H:%M", :long=>"%B %d, %Y %H:%M", :long_ordinal=>#
+
+######
+
+Formats canadien à créer au besion
+
+######
+met sa dans config/initializers/date_formats.rb
+Time::DATE_FORMATS[:CnDates] = "%d-%m-%y"
+Time::DATE_FORMATS[:CndLong] = "%d %B, %Y %H:%M"
+
+
+
+############################################
+
+FORM HELPERS
+
+############################################
+
+pas oublier pour faire une form qui upload pas le choix de setter :multipart => true
+
+form_for
+
+text_field
+
+password_field
+
+text_area
+
+hidden_field
+
+file_field
+
+radio_button
+
+check_box
+
+###########################################
+
+date and time helpers
+
+###########################################
+
+
+date_select
+
+date_select( object, attibute, options, html_options )  va sortir 3 options une pour année month jour
+
+options;
+
+:start_year => Time.now.year - 5,
+
+:end_year => Time.now.year + 5
+
+:order => [:year, : month, :day]
+
+:discard_year => false
+
+:discard_month => false
+
+:discard_day => false
+
+:include_blank => false
+
+:prompt => false
+
+:use_month_numbers => false
+
+:add_month_numbers => false
+
+:use_short_month => false
+
+:date_separator => " "
+
+
+time_select( object, attibute, options, html_options )
+
+:include_seconds => false
+
+:minute_step => 1
+
+:include_blank => false, :prompt => false
+
+:time_separator => ":"
+
+
+
+datetime_select( object, attibute, options, html_options )
+
+toute les option des deux en haute
+
+:datetime_separator => "-"
+
+###########################################
+
+Form tag helper date and time
+
+##########################################
+
+select_date , select_time, select_datetime
+select_year, select_month, select_day
+select_hour, select_minute, select_second
+
+don't take field name as first argument
+select_xxx( datetime, options={}, html_options={})
+
+select_datetime( 2.days.from_now )
+select_year ( Time.now, :prefix => "expiration") #name= "expiration[year]"
+
+
+
+######################################
+
+form errors
+
+#####################################
+
+
+validates_presence_of tu valide la presence d'un ouput de ton form sa return un error attacher à ton object exemple subject.errors -->
+--> dois être dans notre models
+object.errors.clear
+object.errors.size
+object.errors.each { |attr, msg| ... }
+object.errors.full_messages.each { |msg| ... }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

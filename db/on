@@ -1,0 +1,27 @@
+(1) near "restore": syntax error
+(14) os_win.c:35160: (123) winOpen(C:\xampp\htdocs\FirstProject\first_app\db\?) - The filename, directory name, or volume label syntax is incorrect.
+(14) os_win.c:35160: (123) winOpen(C:\xampp\htdocs\FirstProject\first_app\db\?) - The filename, directory name, or volume label syntax is incorrect.
+(14) cannot open file at line 35166 of [ebd01a8def]
+(1) statement aborts at 5: [ATTACH 'development.sqlite3' as main;] database main is already in use
+(1) near "as": syntax error
+(1) statement aborts at 5: [DETACH 'development.sqlite3';] no such database: development.sqlite3
+(1) statement aborts at 5: [DETACH test;] no such database: test
+(1) statement aborts at 5: [DETACH main;] cannot detach database main
+(1) statement aborts at 5: [DETACH temp
+;] cannot detach database temp
+(1) near "as": syntax error
+(1) near "SEQ": syntax error
+(1) near "1": syntax error
+(1) unable to identify the object to be reindexed
+(1) near "RENAME": syntax error
+(1) near "RENAME": syntax error
+(1) statement aborts at 5: [DETACH 2
+;] no such database: 2
+(1) near "l": syntax error
+(1) near "0": syntax error
+(1) near "main": syntax error
+(1) near "index_info": syntax error
+(1) near "INTO": syntax error
+(1) near "main": syntax error
+(1) statement aborts at 2: [ROLLBACK
+;] cannot rollback - no transaction is active
