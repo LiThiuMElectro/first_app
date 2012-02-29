@@ -508,6 +508,114 @@ sanitize(@subject.content, :tags => ['p', 'br', 'strong', 'em], :attributes => [
 
 
 
+######################################
+
+Data validation
+
+######################################
+
+
+#best est toujours de faire la validations dans le models
+
+validates_presence_of(:attibute, :message => "error costum")
+
+validates_length_of
+:is, :minimum/:maximum(integer)
+:within, :in(1..10)
+:wrong_lenght => "the wrong lenght (should be {{count}}characters)"
+:too_short => "to short (should be {{count}}characters)"
+:too_long => "to long (should be {{count}}characters)"
+
+validates_numericality_of
+
+:equal_to, :greater_tahn, :less_than, :greater_than_or_equal_to, :less_than_or_equal_to(numeric)
+:odd, :even, :only_interger(boolean)
+:message => "is not a number"
+
+validates_inclusion_of
+:in (enumerable) #normalement un array ou un range
+:message => "is not included in the list"
+
+validates_exclusion_of
+:in (enumerable) #normalement un array ou un range
+:message => "is reserved"
+
+validates_format_of
+:with(regex_
+:message => "is invalid"
+
+validates_uniqueness_of #Attribute must not already exist in the database
+:case_sensitive(boolean)
+:scope (column symbols for limiting scope)
+:message => "has already been taken"
+
+validates_acceptance_of  #marche avec un checkbox
+:accept (expected value, "1")
+:message => "must be accepted"
+
+validates_confirmation_of #sa valide genre le deuxième pwd ou deuxième email pour être sur qui match
+(:email get :email_confirmation)
+
+#####
+most of the methods
+####
+:allow_nil => true #skill si cest nil
+:allow_blank => true #skip if blank
+
+#####
+toute les méthodes accept
+####
+:on => :save / :create / :update
+
+:if => :method / :unless => :method #si on utilise tell model ou si on utilise un autre
+
+
+#############################
+
+sexy validations
+
+#############################
+
+validates :attribute ,  :presence => boolean,
+			:numericality => boolean,
+			:length => options_hash,
+			:format => { :with => regex },
+			:inclusion => { in => array_of_range },
+			:exclusion => { in => array_of_range },
+			:acceptance => boolean,
+			:uniqueness => boolean,
+			:confirmation => boolean
+
+######################
+
+validates associated method
+
+######################
+
+validates_associated(association,options) 
+
+#emple
+
+class Auction < ActiveRecord::Base
+	validates :starting_bid, :presence => true, :numericality => true
+	validates_presence_of :car
+	validates_associated :car
+end
+
+class Car < ActiveRecord::Base
+	belongs_to :auction
+	validates :year, :format => /^(\d{4})$/
+	validates :model, :presence => true, :length => {:maximum => 25}
+	validates :color, :inclusion => COLORS_ARRAY
+end
+
+
+
+
+
+
+
+
 
 
 

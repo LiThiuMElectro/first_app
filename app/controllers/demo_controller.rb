@@ -26,7 +26,7 @@ layout 'admin'
   end
  def javascript
  end
- def text_helpers
+ def escape_output
  end
 
 end
