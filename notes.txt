@@ -594,12 +594,12 @@ validates associated method
 
 validates_associated(association,options) 
 
-#emple
+####exemple
 
 class Auction < ActiveRecord::Base
 	validates :starting_bid, :presence => true, :numericality => true
-	validates_presence_of :car
-	validates_associated :car
+	validates_presence_of :car #regard si l'object est présent
+	validates_associated :car #query l'object :car voir si il est valide
 end
 
 class Car < ActiveRecord::Base
@@ -608,6 +608,30 @@ class Car < ActiveRecord::Base
 	validates :model, :presence => true, :length => {:maximum => 25}
 	validates :color, :inclusion => COLORS_ARRAY
 end
+
+
+###########################
+
+Protecting attributes
+
+###########################
+
+#protèger des attributes dans un input de form, si on ne veut pas qu'un attribute sa updater dans notre db
+
+attr_protected
+
+
+# on à le contraire aussi
+
+attr_accessible
+
+
+##############################
+
+db Callbacks
+
+#############################
+
 
 
 

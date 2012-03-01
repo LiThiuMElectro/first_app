@@ -9,6 +9,9 @@ class AdminUser < ActiveRecord::Base
 	has_many :section_edits
 	has_many :sections, :through => :section_edits #a beaucoup de sections si tu va au traver de section_edits pour les trouvers
 	scope :named, lambda {|first,last| where(:first_name => first, :last_name => last)}
+
+	
+
 	attr_protected :hashed_password, :salt
 	attr_accessor :password
 	EMAIL_REGEX = /^[A-Z0-Z._&+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
@@ -58,7 +61,12 @@ class AdminUser < ActiveRecord::Base
 	def self.hash_with_salt(password="", salt="")	
 		Digest::SHA1.hexdigest("Put #{salt} on the #{password}")
 	end
-	
+	def name 
+		AdminUser.all.each do |name|
+			puts "test"+ name.last_name
+			puts "WTF christ"
+		end
+	end
 	private
 	
 		def create_hashed_password
