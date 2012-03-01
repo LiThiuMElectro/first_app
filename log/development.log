@@ -36035,3 +36035,346 @@ Served asset /sections.js - 304 Not Modified (0ms)
 
 Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2012-02-26 22:56:17 -0500
 Served asset /subjects.js - 304 Not Modified (0ms)
+
+
+Started GET "/access/" for 127.0.0.1 at 2012-03-01 09:20:26 -0500
+Processing by AccessController#index as HTML
+  Rendered access/login.html.erb within layouts/admin (2.0ms)
+Compiled access.js  (497ms)  (pid 16172)
+Compiled application.js  (582ms)  (pid 16172)
+Completed 200 OK in 1347ms (Views: 1347.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /access.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /demo.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/sections.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /sections.js - 200 OK (0ms)
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2012-03-01 09:20:27 -0500
+Served asset /subjects.js - 200 OK (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-01 09:20:33 -0500
+Processing by AccessController#menu as HTML
+  Rendered access/menu.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log%20out" for 127.0.0.1 at 2012-03-01 09:20:47 -0500
+
+ActionController::RoutingError (No route matches [GET] "/log%20out"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/log%20out" for 127.0.0.1 at 2012-03-01 09:21:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/log%20out"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/acess" for 127.0.0.1 at 2012-03-01 09:21:22 -0500
+
+ActionController::RoutingError (No route matches [GET] "/acess"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/access" for 127.0.0.1 at 2012-03-01 09:21:26 -0500
+Processing by AccessController#index as HTML
+  Rendered access/login.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2012-03-01 09:21:32 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROBp/IMTrTLzupL3kxCKGhKZlC4jSrpG8p+fTyawDc0=", "username"=>"LiThiuMElectro", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mAdminUser Load (0.0ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = 'LiThiuMElectro' LIMIT 1
+Redirected to http://127.0.0.1:3030/access/login
+Completed 302 Found in 76ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2012-03-01 09:21:32 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2012-03-01 09:21:41 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROBp/IMTrTLzupL3kxCKGhKZlC4jSrpG8p+fTyawDc0=", "username"=>"LiThiuMElectro", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mAdminUser Load (0.0ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = 'LiThiuMElectro' LIMIT 1[0m
+Redirected to http://127.0.0.1:3030/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-01 09:21:41 -0500
+Processing by AccessController#menu as HTML
+  Rendered access/menu.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 32ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-03-01 09:21:43 -0500
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/Ruby193/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/access" for 127.0.0.1 at 2012-03-01 09:22:44 -0500
+Processing by AccessController#index as HTML
+  Rendered access/login.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 19ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:22:44 -0500
+Served asset /access.js - 304 Not Modified (1ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2012-03-01 09:22:52 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROBp/IMTrTLzupL3kxCKGhKZlC4jSrpG8p+fTyawDc0=", "username"=>"LiThiuMElectro", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mAdminUser Load (0.0ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = 'LiThiuMElectro' LIMIT 1
+Redirected to http://127.0.0.1:3030/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-01 09:22:52 -0500
+Processing by AccessController#menu as HTML
+  Rendered access/menu.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:22:52 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2012-03-01 09:22:54 -0500
+Processing by AccessController#logout as HTML
+Redirected to http://127.0.0.1:3030/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2012-03-01 09:22:54 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:22:55 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-01 09:44:39 -0500
+Processing by AccessController#menu as HTML
+Redirected to http://127.0.0.1:3030/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2012-03-01 09:44:39 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 30ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:39 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/access/index" for 127.0.0.1 at 2012-03-01 09:44:45 -0500
+Processing by AccessController#index as HTML
+Redirected to http://127.0.0.1:3030/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2012-03-01 09:44:45 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:45 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:45 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2012-03-01 09:44:50 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROBp/IMTrTLzupL3kxCKGhKZlC4jSrpG8p+fTyawDc0=", "username"=>"LiThiuMElectro", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mAdminUser Load (0.0ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = 'LiThiuMElectro' LIMIT 1[0m
+Redirected to http://127.0.0.1:3030/admin
+Completed 302 Found in 48ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-01 09:44:51 -0500
+Processing by AccessController#menu as HTML
+  Rendered access/menu.html.erb within layouts/admin (1.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:51 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2012-03-01 09:44:54 -0500
+Processing by SubjectsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "subjects" 
+  [1m[36mSubject Load (0.0ms)[0m  [1mSELECT "subjects".* FROM "subjects" ORDER BY subjects.position ASC[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "pages" WHERE "pages"."subject_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "pages" WHERE "pages"."subject_id" = 2[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "pages" WHERE "pages"."subject_id" = 4
+  Rendered subjects/list.html.erb within layouts/admin (22.0ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:44:54 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/access" for 127.0.0.1 at 2012-03-01 09:45:34 -0500
+Processing by AccessController#index as HTML
+  Rendered access/login.html.erb within layouts/admin (0.0ms)
+Completed 200 OK in 32ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:45:34 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:45:34 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2012-03-01 09:45:40 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROBp/IMTrTLzupL3kxCKGhKZlC4jSrpG8p+fTyawDc0=", "username"=>"LiThiuMElectro", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mAdminUser Load (0.0ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = 'LiThiuMElectro' LIMIT 1[0m
+Redirected to http://127.0.0.1:3030/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-01 09:45:40 -0500
+Processing by AccessController#menu as HTML
+  Rendered access/menu.html.erb within layouts/admin (2.0ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.js?body=1" for 127.0.0.1 at 2012-03-01 09:45:40 -0500
+Served asset /access.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-01 09:45:40 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)

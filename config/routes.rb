@@ -1,7 +1,10 @@
 FirstApp::Application.routes.draw do
 	
+
+
 	#comment définire le root de ton webserver
 	root :to => "demo#index"
+	match 'admin', :to => 'access#menu'
   #get "demo/index"
   
   #sa work pour le route version mais pas super fiable
