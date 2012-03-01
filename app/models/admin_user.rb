@@ -9,7 +9,7 @@ class AdminUser < ActiveRecord::Base
 	has_many :section_edits
 	has_many :sections, :through => :section_edits #a beaucoup de sections si tu va au traver de section_edits pour les trouvers
 	scope :named, lambda {|first,last| where(:first_name => first, :last_name => last)}
-
+	scope :sorted, order("admin_users.last_name ASC, admin_users.first_name DESC")
 	
 
 	attr_protected :hashed_password, :salt
@@ -62,10 +62,7 @@ class AdminUser < ActiveRecord::Base
 		Digest::SHA1.hexdigest("Put #{salt} on the #{password}")
 	end
 	def name 
-		AdminUser.all.each do |name|
-			puts "test"+ name.last_name
-			puts "WTF christ"
-		end
+		"#{first_name} #{last_name}"
 	end
 	private
 	
