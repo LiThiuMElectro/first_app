@@ -1,0 +1,25 @@
+<%= error_messages_for(@admin_user) %>
+<table summary="Creat Admin User">
+	<tr>
+		<th> <%= f.label(:first_name)%>	</th>
+		<th> <%= f.text_field(:first_name) %> </th>
+	</tr>
+	<tr>
+		<th> <%= f.label(:last_name)%>	</th>
+		<th> <%= f.text_field(:last_name) %> </th>
+	</tr>
+	<tr>
+		<th> <%= f.label(:email)%>	</th>
+		<th> <%= f.text_field(:email) %> </th>
+	</tr>
+	
+	<tr>
+		<th> <%= f.label(:username)%>	</th>
+		<th> <%= f.text_field(:username) %> </th>
+	</tr>
+	<tr>
+		<th> <%= f.label(:password)%>	</th>
+		<th> <%= f.password_field(:password) %> </th>
+	</tr>
+
+</table>

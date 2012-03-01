@@ -12,19 +12,34 @@ class AdminUsersController < ApplicationController
   def list
     @admin_users = AdminUser.sorted
   end
-	def new
-	@Adminusers = AdminUser.new
-	end
+  
+  def new
+	@admin_user = AdminUser.new
+  end
 	
-	def create
-		
+  def create
+	@admin_user = AdminUser.new(params[:admin_user])
+	if @admin_user.save
+	  flash[:notice] = 'Admin user created.'
+	  redirect_to(:action => 'list')
+	else
+	  render("new")
 	end
+  end
 	
-	def edit
-	end
+  def edit
+	@admin_user = AdminUser.find(params[:id])
+  end
 	
-	def update
+  def update
+	@admin_user = AdminUser.find(params[:id])
+	if @admin_user.update_attributes(params[:admin_user])
+  	  flash[:notice] = 'Admin user updated.'
+	  redirect_to(:action => 'list')
+	else
+		render("edit")
 	end
+  end
 	
 	def delete
 	end
@@ -32,7 +47,5 @@ class AdminUsersController < ApplicationController
 	def destroy
 	end
 	
-	def list
-		
-	end
+
 end
